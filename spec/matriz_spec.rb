@@ -9,6 +9,7 @@ describe Matriz do
 		@m5 = Matriz.new(2,3,[[1,2,3],[4,5,6]])
 		@m6 = Matriz.new(3,2,[[1,2],[3,4],[5,6]])
 		@m7 = Matriz.new(2,2,[[22,28],[49,64]])
+		@m8 = Matriz.new(3,2,[[1,4],[2,5],[3,6]])
 	end
 
 	describe "Se comprueba el numero de: " do
@@ -71,6 +72,9 @@ describe Matriz do
 	describe "Matriz traspuesta " do
 		it "del orden nxn." do
 			@m1.traspuesta.to_s.should eq(@m4.to_s)
+		end
+		it "del orden mxn" do
+			@m5.traspuesta.to_s.should eq(@m8.to_s)
 		end
 	end
 end
