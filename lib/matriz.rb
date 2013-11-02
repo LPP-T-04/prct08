@@ -8,19 +8,35 @@ class Matriz
 	end
 
 	def to_s
-		@imprimir = ""
+		imprimir = ""
 		@filas.times do |i|
 			@columnas.times do |j|
-				@imprimir << "#{elemento[i][j]} "
+				imprimir << "#{elemento[i][j]} "
 			end
-			@imprimir << "\n"
+			imprimir << "\n"
 		end
-		@imprimir
+		imprimir
+	end
+
+	def +(other)
+		raise ArgumentError, "La longitud de las matrices no coincide." unless @filas == other.filas && @columnas == other.columnas
+		elemento = Array.new
+		@filas.times do |i|
+			elemento_fila = Array.new
+			@columnas.times do |j|
+				elemento_fila << @elemento[i][j] + other.elemento[i][j]
+			end
+			elemento << elemento_fila
+		end
+		Matriz.new(@filas, @columnas,elemento)
 	end
 end
 
 if __FILE__ == $0
 # Trabajo con la clase:
 a = Matriz.new(2,2,[[1,2],[3,4]])
-puts a
+b = Matriz.new(3,2,[[1,2],[3,4],[5,6]])
+
+c = a+b
+puts c
 end

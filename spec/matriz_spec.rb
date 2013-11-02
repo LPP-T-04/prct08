@@ -38,7 +38,7 @@ describe Matriz do
 
 	describe "Suma de dos matrices" do
 		it "del orden mxn" do
-			@m1.+(m1).to_s.should eq(@m2)
+			@m1.+(@m1).to_s.should eq(@m2.to_s)
 		end
 	end
 end
