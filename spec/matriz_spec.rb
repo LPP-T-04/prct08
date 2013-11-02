@@ -47,4 +47,10 @@ describe Matriz do
 			@m2.-(@m1).to_s.should eq(@m1.to_s)
 		end
 	end
+	
+	describe "Multiplicacion de un numero por una matriz" do
+		it "del orden mxn" do
+			@m1.*(2).to_s.should eq(@m2.to_s)
+		end
+	end
 end
