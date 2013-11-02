@@ -55,6 +55,24 @@ class Matriz
 		end
 		Matriz.new(@filas, @columnas,elemento)
 	end
+
+	def x(other)
+		raise ArgumentError, "La longitud de las matrices no coincide." unless @columnas == other.filas
+		elemento = Array.new
+		acumulado = 0
+		@filas.times do |i|
+			elemento_fila = Array.new
+			@columnas.times do |j|
+				acumulado = 0
+				other.filas.times do |k|
+					acumulado += @elemento[i][k] * other.elemento[k][j]
+				end
+				elemento_fila << acumulado
+			end
+			elemento << elemento_fila
+		end
+		Matriz.new(@filas, @columnas,elemento)
+	end
 end
 
 if __FILE__ == $0
