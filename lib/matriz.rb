@@ -62,16 +62,16 @@ class Matriz
 		acumulado = 0
 		@filas.times do |i|
 			elemento_fila = Array.new
-			@columnas.times do |j|
+			other.columnas.times do |j|
 				acumulado = 0
-				other.filas.times do |k|
+				@columnas.times do |k|
 					acumulado += @elemento[i][k] * other.elemento[k][j]
 				end
 				elemento_fila << acumulado
 			end
 			elemento << elemento_fila
 		end
-		Matriz.new(@filas, @columnas,elemento)
+		Matriz.new(@filas, other.columnas, elemento)
 	end
 
 	def traspuesta
