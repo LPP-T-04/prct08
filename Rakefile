@@ -6,3 +6,8 @@ $:.unshift './lib', './spec'
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new
 task :default => :spec
+
+desc "install gems"
+task :install do 
+	sh "bundle install"
+end
