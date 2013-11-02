@@ -41,4 +41,10 @@ describe Matriz do
 			@m1.+(@m1).to_s.should eq(@m2.to_s)
 		end
 	end
+
+	describe "Resta de dos matrices" do
+		it "del orden mxn" do
+			@m2.-(@m1).to_s.should eq(@m1.to_s)
+		end
+	end
 end
