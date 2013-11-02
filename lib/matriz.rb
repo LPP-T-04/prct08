@@ -1,8 +1,9 @@
 class Matriz
-	attr_accessor :filas, :columnas
-	
-	def initialize(filas, columnas)
+	attr_accessor :filas, :columnas, :elemento
+
+	def initialize(filas, columnas, elemento)
 		@filas = filas
 		@columnas = columnas
+		@elemento = Array.new(elemento)
 	end
 end	

@@ -2,7 +2,7 @@ require "matriz.rb"
 
 describe Matriz do
 	before :each do
-		@m1 = Matriz.new(2,2)
+		@m1 = Matriz.new(2,2,[[1,2],[3,4]])
 	end
 
 	describe "Se comprueba el numero de: " do
@@ -26,4 +26,5 @@ describe Matriz do
 		it "Para acceder al [0,0]" do
 			@m1.elemento[1][1].should eq(4)
 		end
+	end
 end
