@@ -43,6 +43,18 @@ class Matriz
 		end
 		Matriz.new(@filas, @columnas,elemento)
 	end
+
+	def *(other)
+		elemento = Array.new
+		@filas.times do |i|
+			elemento_fila = Array.new
+			@columnas.times do |j|
+				elemento_fila << @elemento[i][j] * other
+			end
+			elemento << elemento_fila
+		end
+		Matriz.new(@filas, @columnas,elemento)
+	end
 end
 
 if __FILE__ == $0
