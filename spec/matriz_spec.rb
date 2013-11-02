@@ -5,6 +5,7 @@ describe Matriz do
 		@m1 = Matriz.new(2,2,[[1,2],[3,4]])
 		@m2 = Matriz.new(2,2,[[2,4],[6,8]])
 		@m3 = Matriz.new(2,2,[[7,10],[15,22]])
+		@m4 = Matriz.new(2,2,[[1,3],[2,4]])
 	end
 
 	describe "Se comprueba el numero de: " do
@@ -58,6 +59,12 @@ describe Matriz do
 	describe "Multiplicacion de matrices" do
 		it "del orden axn x nxb" do
 			@m1.x(@m1).to_s.should eq(@m3.to_s)
+		end
+	end
+
+	describe "Matriz traspuesta " do
+		it "del orden nxn." do
+			@m1.traspuesta.to_s.should eq(@m4.to_s)
 		end
 	end
 end
