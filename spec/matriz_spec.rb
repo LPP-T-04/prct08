@@ -29,7 +29,7 @@ describe Matriz do
 	end
 	describe "Imprimir la matriz" do
 		it "del orden 2x2" do
-			@m1.to_s.should eq("1 2\n3 4")
+			@m1.to_s.should eq("1 2 \n3 4 \n")
 		end
 	end
 end
