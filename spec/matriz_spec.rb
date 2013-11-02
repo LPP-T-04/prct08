@@ -27,4 +27,9 @@ describe Matriz do
 			@m1.elemento[1][1].should eq(4)
 		end
 	end
+	describe "Imprimir la matriz" do
+		it "del orden 2x2" do
+			@m1.to_s.should eq("1 2\n3 4")
+		end
+	end
 end
