@@ -6,6 +6,9 @@ describe Matriz do
 		@m2 = Matriz.new(2,2,[[2,4],[6,8]])
 		@m3 = Matriz.new(2,2,[[7,10],[15,22]])
 		@m4 = Matriz.new(2,2,[[1,3],[2,4]])
+		@m5 = Matriz.new(2,3,[[1,2,3],[4,5,6]])
+		@m6 = Matriz.new(3,2,[[1,2],[3,4],[5,6]])
+		@m7 = Matriz.new(2,2,[[22,28],[49,64]])
 	end
 
 	describe "Se comprueba el numero de: " do
@@ -56,9 +59,12 @@ describe Matriz do
 		end
 	end
 
-	describe "Multiplicacion de matrices" do
-		it "del orden axn x nxb" do
+	describe "Multiplicacion de matrices del orden axn x nxb" do
+		it "del orden 2x2 x 2x2" do
 			@m1.x(@m1).to_s.should eq(@m3.to_s)
+		end
+		it "del orden 2x3 x 3x2" do
+			@m5.x(@m6).to_s.should eq(@m7.to_s)
 		end
 	end
 

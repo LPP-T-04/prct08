@@ -73,13 +73,27 @@ class Matriz
 		end
 		Matriz.new(@filas, @columnas,elemento)
 	end
+
+	def traspuesta
+		elemento = Array.new
+		@columnas.times do |i|
+			elemento_fila = Array.new
+			@filas.times do |j|
+				elemento_fila << @elemento[j][i]
+			end
+			elemento << elemento_fila
+		end
+		Matriz.new(@columnas, @filas, elemento)
+	end
+
 end
 
 if __FILE__ == $0
 # Trabajo con la clase:
 a = Matriz.new(2,2,[[1,2],[3,4]])
 b = Matriz.new(3,2,[[1,2],[3,4],[5,6]])
-
-c = a+b
+d = Matriz.new(2,3,[[1,2,3],[4,5,6]])
+e = Matriz.new(3,2,[[1,2],[3,4],[5,6]])
+c = d.x(e)
 puts c
 end
