@@ -17,6 +17,12 @@ describe Matriz do
 		@m9 = Matriz.new(2,2,[[a,b],[c,d]])
 		@m10 = Matriz.new(2,2,[[0,0],[0,0]])
 		@m11 = Matriz.new(2,2,[[a,c],[b,d]])
+		e = Frac.new(7,4)
+		f = Frac.new(10,4)
+		g = Frac.new(15,4)
+		h = Frac.new(22,4)
+		@m12 = Matriz.new(2,2,[[e,f],[g,h]])
+
 	end
 
 	describe "Se comprueba el numero de: " do
@@ -91,6 +97,9 @@ describe Matriz do
 		end
 		it "resta" do
 			@m9.-(@m9).to_s.should eq (@m10.to_s)
+		end
+		it "Multiplicacion" do
+			@m9.x(@m9).to_s.should eq (@m12.to_s)
 		end
 		it "traspuesta" do
 			@m9.traspuesta.to_s.should eq (@m11.to_s)

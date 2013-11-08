@@ -67,7 +67,8 @@ class Matriz
 			other.columnas.times do |j|
 				acumulado = 0
 				@columnas.times do |k|
-					acumulado += @elemento[i][k] * other.elemento[k][j]
+					suma = @elemento[i][k] * other.elemento[k][j]
+					acumulado = suma + acumulado
 				end
 				elemento_fila << acumulado
 			end

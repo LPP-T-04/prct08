@@ -62,7 +62,12 @@ class Frac
     end
 
     def +(other) # Calcula la suma de dos fracciones.
-        Frac.new(@numerador*other.denominador + other.numerador*@denominador , @denominador*other.denominador)
+        if other.class == Frac
+            Frac.new(@numerador*other.denominador + other.numerador*@denominador , @denominador*other.denominador)
+        elsif other.class == Fixnum
+            Frac.new(@numerador + other*@denominador , @denominador)
+        end
+                
     end
 
     def -(*other) # Calcula la resta de dos fracciones.
