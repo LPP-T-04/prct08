@@ -10,6 +10,13 @@ describe Matriz do
 		@m6 = Matriz.new(3,2,[[1,2],[3,4],[5,6]])
 		@m7 = Matriz.new(2,2,[[22,28],[49,64]])
 		@m8 = Matriz.new(3,2,[[1,4],[2,5],[3,6]])
+		a = Frac.new(1,2)
+		b = Frac.new(2,2)
+		c = Frac.new(3,2)
+		d = Frac.new(4,2)
+		@m9 = Matriz.new(2,2,[[a,b],[c,d]])
+		@m10 = Matriz.new(2,2,[[0,0],[0,0]])
+		@m11 = Matriz.new(2,2,[[a,c],[b,d]])
 	end
 
 	describe "Se comprueba el numero de: " do
@@ -77,4 +84,17 @@ describe Matriz do
 			@m5.traspuesta.to_s.should eq(@m8.to_s)
 		end
 	end
+
+	describe "Trabajo con fracciones" do
+		it "suma" do
+			@m9.+(@m9).to_s.should eq (@m1.to_s)
+		end
+		it "resta" do
+			@m9.-(@m9).to_s.should eq (@m10.to_s)
+		end
+		it "traspuesta" do
+			@m9.traspuesta.to_s.should eq (@m11.to_s)
+		end
+	end
+
 end

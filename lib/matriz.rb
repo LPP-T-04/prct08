@@ -1,3 +1,5 @@
+require "frac.rb"
+
 class Matriz
 	attr_accessor :filas, :columnas, :elemento
 
@@ -98,4 +100,13 @@ c = d.x(e)
 puts c
 puts d
 puts d.traspuesta
+puts a.x(a)
+puts "Fracciones"
+a = Frac.new(1,2)
+b = Frac.new(2,2)
+c = Frac.new(3,2)
+d = Frac.new(4,2)
+m9 = Matriz.new(2,2,[[a,b],[c,d]])
+e = m9+m9
+puts e
 end
